@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'bs-navbar',
   templateUrl: './bs-navbar.component.html',
   styleUrls: ['./bs-navbar.component.css']
 })
-export class BsNavbarComponent implements OnInit {
+export class BsNavbarComponent {
+  isCollapsed: boolean;
 
-  constructor() { }
-
-  ngOnInit() {
+  onClick(){
+    this.isCollapsed = !this.isCollapsed;
   }
-
 }
