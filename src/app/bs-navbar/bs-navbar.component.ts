@@ -1,3 +1,4 @@
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,7 +9,15 @@ import { Component } from '@angular/core';
 export class BsNavbarComponent {
   isCollapsed: boolean;
 
+  constructor(private afAuth: AngularFireAuth){
+    afAuth.authState.subscribe(x => console.log(x));
+  }
+
   onClick(){
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  logout(){
+    this.afAuth.auth.signOut();
   }
 }
