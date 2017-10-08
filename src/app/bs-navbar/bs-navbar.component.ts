@@ -1,4 +1,6 @@
+import { AuthService } from './../auth.service';
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'bs-navbar',
@@ -8,7 +10,17 @@ import { Component } from '@angular/core';
 export class BsNavbarComponent {
   isCollapsed: boolean;
 
+
+
+  constructor(public auth: AuthService){
+    
+  }
+
   onClick(){
     this.isCollapsed = !this.isCollapsed;
+  }
+
+  logout(){
+    this.auth.logout();
   }
 }
