@@ -1,3 +1,4 @@
+import { AppUser } from './../models/app-user';
 import { AuthService } from './../auth.service';
 import { Component } from '@angular/core';
 
@@ -9,11 +10,11 @@ import { Component } from '@angular/core';
 })
 export class BsNavbarComponent {
   isCollapsed: boolean;
+  appUser: AppUser;
 
 
-
-  constructor(public auth: AuthService){
-    
+  constructor(private auth: AuthService){
+    auth.appUser$.subscribe(appUser => this.appUser = appUser);
   }
 
   onClick(){
