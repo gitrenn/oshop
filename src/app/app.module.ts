@@ -61,14 +61,20 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
       { path: 'my-orders', component: MyOrdersComponent},
       { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuard] },
       
+      
       { 
-        path: 'admin/products', 
-        component: AdminProductsComponent, 
+        path: 'admin/products/new', // put the most specific route on the top
+        component: ProductFormComponent, 
         canActivate: [AuthGuard, AdminAuthGuard] 
       },
       { 
-        path: 'admin/products/new', 
+        path: 'admin/products/:id', 
         component: ProductFormComponent, 
+        canActivate: [AuthGuard, AdminAuthGuard] 
+      },
+      { 
+        path: 'admin/products', 
+        component: AdminProductsComponent, 
         canActivate: [AuthGuard, AdminAuthGuard] 
       },
       { 
