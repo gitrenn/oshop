@@ -1,3 +1,4 @@
+import { Product } from './../../models/product';
 import { Subscription } from 'rxjs/Rx';
 import { ProductService } from './../../product.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -8,7 +9,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./admin-products.component.css']
 })
 export class AdminProductsComponent implements OnInit, OnDestroy {
-  products:{title: string}[];//in the future, an interface of products should be created (product[])
+  products: Product[];
   filteredProducts: any[]; // this array will be displayed in the template
   subscription: Subscription;
 
