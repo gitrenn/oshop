@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database/database.module
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule } from '@angular/forms';
 import {CustomFormsModule} from 'ng2-validation';
+import { DataTableModule } from 'angular-4-data-table';
 
 import { AppComponent } from './app.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
@@ -47,6 +48,7 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     BrowserModule,
     FormsModule,
     CustomFormsModule,
+    DataTableModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
