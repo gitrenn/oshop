@@ -1,5 +1,5 @@
 import { Product } from './models/product';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/take';
 
@@ -14,7 +14,7 @@ export class ShoppingCartService {
     })
   }
 
-  async getCart(){// read from the db
+  async getCart(): Promise<FirebaseObjectObservable<any>> {// read from the db
     let cartId = await this.getOrCreateCartId();
     return this.db.object('/shopping-cart/' + cartId);
   }
